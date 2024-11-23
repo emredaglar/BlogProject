@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace BlogProject.DataAccessLayer.Context
 {
-    internal class BlogContext : IdentityDbContext<AppUser, AppRole, int>
+    public class BlogContext : IdentityDbContext<AppUser, AppRole, int>
     {
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {

@@ -11,12 +11,10 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Abstract\" />
     <Folder Include="Concrete\" />
     <Folder Include="EntityFreamwork\" />
     <Folder Include="Migrations\" />
     <Folder Include="UnitOfWork\" />
-    <Folder Include="Repositories\" />
   </ItemGroup>
 
 </Project>
