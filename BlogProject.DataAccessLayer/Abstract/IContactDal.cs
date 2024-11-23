@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SensiveProject.DataAccessLayer.Abstract
+namespace BlogProject.DataAccessLayer.Abstract
 {
     public interface IContactDal:IGenericDal<Contact>
     {
