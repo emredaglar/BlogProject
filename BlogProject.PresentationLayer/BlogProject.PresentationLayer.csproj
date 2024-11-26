@@ -12,6 +12,10 @@
     <None Include="wwwroot\login-form-06\fonts\.DS_Store" />
     <None Include="wwwroot\login-form-06\images\.DS_Store" />
     <None Include="wwwroot\login-form-06\scss\.DS_Store" />
+    <None Include="wwwroot\sensive-master\img\blog\.DS_Store" />
+    <None Include="wwwroot\sensive-master\img\gallery\.DS_Store" />
+    <None Include="wwwroot\sensive-master\img\instagram\.DS_Store" />
+    <None Include="wwwroot\sensive-master\vendors\linericon\.DS_Store" />
   </ItemGroup>
 
   <ItemGroup>

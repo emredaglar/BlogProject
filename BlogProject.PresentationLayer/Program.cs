@@ -1,4 +1,8 @@
+using BlogProject.BusinessLayer.Abstract;
+using BlogProject.BusinessLayer.Concrete;
+using BlogProject.DataAccessLayer.Abstract;
 using BlogProject.DataAccessLayer.Context;
+using BlogProject.DataAccessLayer.EntityFreamwork;
 using BlogProject.EntityLayer.Concrete;
 using BlogProject.PresentationLayer.Models;
 
@@ -8,6 +12,28 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddDbContext<BlogContext>();
 builder.Services.AddIdentity<AppUser, AppRole>().AddEntityFrameworkStores<BlogContext>().AddErrorDescriber<CustomIdentityValidator>();
+
+builder.Services.AddScoped<ICategoryDal, EFCategoryDal>();
+builder.Services.AddScoped<ICategoryService, CategoryManager>();
+
+builder.Services.AddScoped<IArticleDal, EfArticleDal>();
+builder.Services.AddScoped<IArticleService, ArticleManager>();
+
+builder.Services.AddScoped<ICommentDal, EfCommentDal>();
+builder.Services.AddScoped<ICommentService, CommentManager>();
+
+builder.Services.AddScoped<IContactDal, EfContactDal>();
+builder.Services.AddScoped<IContactService, ContactManager>();
+
+builder.Services.AddScoped<INewsletterDal, EfNewsletterDal>();
+builder.Services.AddScoped<INewsletterService, NewsletterManager>();
+
+builder.Services.AddScoped<ITagCloudDal, EfTagCloudDal>();
+builder.Services.AddScoped<ITagCloudService, TagCloudManager>();
+
+builder.Services.AddScoped<IAppUserDal, EfAppUserDal>();
+builder.Services.AddScoped<IAppUserService, AppUserManager>();
+
 
 builder.Services.AddControllersWithViews();
 
