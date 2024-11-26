@@ -7,6 +7,14 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Include="wwwroot\login-form-06\.DS_Store" />
+    <None Include="wwwroot\login-form-06\css\.DS_Store" />
+    <None Include="wwwroot\login-form-06\fonts\.DS_Store" />
+    <None Include="wwwroot\login-form-06\images\.DS_Store" />
+    <None Include="wwwroot\login-form-06\scss\.DS_Store" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="8.0.11">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>

@@ -1,6 +1,14 @@
+using BlogProject.DataAccessLayer.Context;
+using BlogProject.EntityLayer.Concrete;
+using BlogProject.PresentationLayer.Models;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+
+builder.Services.AddDbContext<BlogContext>();
+builder.Services.AddIdentity<AppUser, AppRole>().AddEntityFrameworkStores<BlogContext>().AddErrorDescriber<CustomIdentityValidator>();
+
 builder.Services.AddControllersWithViews();
 
 var app = builder.Build();
@@ -17,6 +25,7 @@ app.UseHttpsRedirection();
 app.UseStaticFiles();
 
 app.UseRouting();
+app.UseAuthentication();
 
 app.UseAuthorization();
 
