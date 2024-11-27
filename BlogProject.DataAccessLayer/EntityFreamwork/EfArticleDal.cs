@@ -30,6 +30,13 @@ namespace BlogProject.DataAccessLayer.EntityFreamwork
             var values = context.Articles.Include(x => x.category).Include(y=>y.AppUser).ToList();
             return values;
         }
+        //bloga ait kullanıcıyı ve yorum sayısını listeleme
+        public List<Article> BlogsWithUserAndComment()
+        {
+            var context = new BlogContext();
+            var values=context.Articles.Include(x=>x.AppUser).Include(y=>y.Comments).Include(z=>z.category).ToList();
+            return values;
+        }
 
         public Article GetLastArticle()
         {

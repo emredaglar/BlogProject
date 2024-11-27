@@ -59,5 +59,10 @@ namespace BlogProject.BusinessLayer.Concrete
         {
            return _articleDal.GetLastArticle();
         }
+
+        public List<Article> TBlogsWithUserAndComment()
+        {
+            return _articleDal.BlogsWithUserAndComment();
+        }
     }
 }

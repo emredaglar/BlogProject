@@ -13,5 +13,6 @@ namespace BlogProject.DataAccessLayer.Abstract
         List<Article> ArticleListWithCategory();
         List<Article> ArticleListWithCategoryAndAppUser();
         Article GetLastArticle();
+        List<Article> BlogsWithUserAndComment();
     }
 }
