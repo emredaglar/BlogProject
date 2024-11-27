@@ -2,6 +2,7 @@
 using BlogProject.DataAccessLayer.Context;
 using BlogProject.DataAccessLayer.Repositories;
 using BlogProject.EntityLayer.Concrete;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,5 +16,12 @@ namespace BlogProject.DataAccessLayer.EntityFreamwork
 		public EFCategoryDal(BlogContext context) : base(context)
 		{
 		}
-	}
+
+        public List<Category> CategorysBlogCount()
+        {
+           var context=new BlogContext();
+           var value = context.Categories.Include(x => x.Articles).ToList();
+           return value;
+        }
+    }
 }

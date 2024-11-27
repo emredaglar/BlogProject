@@ -18,7 +18,12 @@ namespace BlogProject.BusinessLayer.Concrete
 			_categoryDal = categoryDal;
 		}
 
-		public void TDelete(int id)
+        public List<Category> TCategorysBlogCount()
+        {
+           return _categoryDal.CategorysBlogCount();
+        }
+
+        public void TDelete(int id)
 		{
 			_categoryDal.Delete(id);
 		}

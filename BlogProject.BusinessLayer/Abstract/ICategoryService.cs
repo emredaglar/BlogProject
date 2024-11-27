@@ -9,5 +9,6 @@ namespace BlogProject.BusinessLayer.Abstract
 {
 	public interface ICategoryService:IGenericService<Category>
 	{
-	}
+        List<Category> TCategorysBlogCount();
+    }
 }

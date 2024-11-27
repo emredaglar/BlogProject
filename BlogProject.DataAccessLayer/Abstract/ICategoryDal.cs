@@ -10,6 +10,8 @@ namespace BlogProject.DataAccessLayer.Abstract
 {
     public interface ICategoryDal:IGenericDal<Category>
     {
+        List<Category> CategorysBlogCount();
+        
 
     }
 }
