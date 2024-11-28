@@ -17,6 +17,6 @@ namespace BlogProject.PresentationLayer.ViewComponents
             var values = _articleService.TBlogsWithUserAndComment();
             return View(values);
         }
-    
+
     }
 }

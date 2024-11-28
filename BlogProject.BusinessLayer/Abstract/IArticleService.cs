@@ -13,5 +13,6 @@ namespace BlogProject.BusinessLayer.Abstract
         List<Article> TArticleListWithCategoryAndAppUser();
         public Article TGetLastArticle();
         List<Article> TBlogsWithUserAndComment();
+        List<Article> TSliderBlogsAndCategory();
     }
 }

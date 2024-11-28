@@ -14,5 +14,6 @@ namespace BlogProject.DataAccessLayer.Abstract
         List<Article> ArticleListWithCategoryAndAppUser();
         Article GetLastArticle();
         List<Article> BlogsWithUserAndComment();
+        List<Article> SliderBlogsAndCategory();
     }
 }

@@ -64,5 +64,10 @@ namespace BlogProject.BusinessLayer.Concrete
         {
             return _articleDal.BlogsWithUserAndComment();
         }
+
+        public List<Article> TSliderBlogsAndCategory()
+        {
+            return _articleDal.SliderBlogsAndCategory();
+        }
     }
 }

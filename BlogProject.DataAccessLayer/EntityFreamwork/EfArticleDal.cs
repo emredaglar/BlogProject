@@ -44,5 +44,12 @@ namespace BlogProject.DataAccessLayer.EntityFreamwork
             var value=context.Articles.OrderByDescending(x=>x.ArticleId).Take(1).FirstOrDefault();
             return value;
         }
+
+        public List<Article> SliderBlogsAndCategory()
+        {
+            var context = new BlogContext();
+            var values= context.Articles.Include(z => z.category).ToList();
+            return values;
+        }
     }
 }
