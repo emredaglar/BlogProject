@@ -15,5 +15,7 @@ namespace BlogProject.DataAccessLayer.Abstract
         Article GetLastArticle();
         List<Article> BlogsWithUserAndComment();
         List<Article> SliderBlogsAndCategory();
+        List<Article> PopularBlogs();
+
     }
 }

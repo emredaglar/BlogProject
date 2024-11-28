@@ -45,11 +45,19 @@ namespace BlogProject.DataAccessLayer.EntityFreamwork
             return value;
         }
 
+        public List<Article> PopularBlogs()
+        {
+            var context = new BlogContext();
+            var values = context.Articles.OrderByDescending(x=>x.ArticleId).Take(3).Include(z => z.AppUser).ToList();
+            return values;
+        }
+
         public List<Article> SliderBlogsAndCategory()
         {
             var context = new BlogContext();
             var values= context.Articles.Include(z => z.category).ToList();
             return values;
         }
+        
     }
 }
