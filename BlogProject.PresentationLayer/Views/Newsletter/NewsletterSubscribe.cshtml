@@ -1,0 +1,15 @@
+﻿@using BlogProject.EntityLayer.Concrete
+@model Newsletter
+
+<div class="single-sidebar-widget newsletter-widget">
+    <h4 class="single-sidebar-widget__title">Abone Ol</h4>
+    <form asp-controller="Newsletter" asp-action="NewsletterSubscribe" method="post">
+    <div class="form-group mt-30">
+        <div class="col-autos">
+            <input type="email" name="Email" class="form-control" id="inlineFormInputGroup" placeholder="Email Adresini Gir" onfocus="this.placeholder = ''"
+                       onblur="this.placeholder = 'Email Adresini Gir'">
+        </div>
+    </div>
+    <button class="bbtns d-block mt-20 w-100">Abone Ol</button>
+    </form>
+</div>

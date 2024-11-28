@@ -32,7 +32,8 @@
                 <!-- Start Blog Post Siddebar -->
                 <div class="col-lg-4 sidebar-widgets">
                     <div class="widget-wrap">
-                        @await Component.InvokeAsync("_NewsletterCP")
+                       @*  @await Component.InvokeAsync("_NewsletterCP") *@
+                        @await Html.PartialAsync("~/Views/Newsletter/NewsletterSubscribe.cshtml")
                         @await Component.InvokeAsync("_CategoryBlogsCP")
                         @await Component.InvokeAsync("_PopularBlogsCP")
                         @await Component.InvokeAsync("_TagCloudCP")
