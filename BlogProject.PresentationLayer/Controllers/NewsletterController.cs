@@ -24,5 +24,17 @@ namespace BlogProject.PresentationLayer.Controllers
             _newsletterService.TInsert(newsletter);
             return RedirectToAction("Index","Default");
         }
+        [HttpGet]
+        public PartialViewResult NewsletterFooterSubscribe()
+        {
+            return PartialView();
+        }
+        [HttpPost]
+        public IActionResult NewsletterFooterSubscribe(Newsletter newsletter)
+        {
+
+            _newsletterService.TInsert(newsletter);
+            return RedirectToAction("Index", "Default");
+        }
     }
 }
