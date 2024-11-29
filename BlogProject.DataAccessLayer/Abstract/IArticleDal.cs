@@ -16,6 +16,7 @@ namespace BlogProject.DataAccessLayer.Abstract
         List<Article> BlogsWithUserAndComment();
         List<Article> SliderBlogsAndCategory();
         List<Article> PopularBlogs();
+        Article ArticleDetailWithUserAndComment(int id);
 
     }
 }

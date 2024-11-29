@@ -74,5 +74,10 @@ namespace BlogProject.BusinessLayer.Concrete
         {
             return _articleDal.PopularBlogs();
         }
+
+        public Article TArticleDetailWithUserAndComment(int id)
+        {
+            return _articleDal.ArticleDetailWithUserAndComment(id);
+        }
     }
 }

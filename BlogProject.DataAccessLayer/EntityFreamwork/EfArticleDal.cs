@@ -17,6 +17,17 @@ namespace BlogProject.DataAccessLayer.EntityFreamwork
 		{
 		}
 
+        public Article ArticleDetailWithUserAndComment(int id)
+        {
+            var context = new BlogContext();
+            var value = context.Articles
+        .Include(x => x.AppUser)       // Kullanıcı bilgileri
+        .Include(y => y.Comments)      // Yorumlar
+        .Include(z => z.category)      // Kategori bilgisi
+        .FirstOrDefault(a => a.ArticleId == id); // Burada 'id' parametresine göre filtreleme yapıyoruz.
+            return value;
+        }
+
         public List<Article> ArticleListWithCategory()
         {
             var context = new BlogContext();

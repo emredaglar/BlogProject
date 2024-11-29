@@ -9,5 +9,7 @@ namespace BlogProject.BusinessLayer.Abstract
 {
 	public interface ICommentService : IGenericService<Comment>
 	{
-	}
+        public List<Comment> TGetArticeleWithComment(int articleId);
+
+    }
 }

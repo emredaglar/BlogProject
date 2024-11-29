@@ -1,0 +1,29 @@
+﻿@using BlogProject.EntityLayer.Concrete
+@model List<Comment>
+
+<div class="comments-area">
+    <h4>@Model.Count Yorum</h4>
+    @foreach (var item in Model)
+    {
+        <div class="comment-list">
+            <div class="single-comment justify-content-between d-flex">
+                <div class="user justify-content-between d-flex">
+                    <div class="thumb">
+                        <img src="/sensive-master/img/blog/c1.jpg" alt="">
+                    </div>
+                    <div class="desc">
+                        <h5><a href="#">@item.Detail</a></h5>
+                        <p class="date">December 4, 2017 at 3:12 pm </p>
+                        <p class="comment">
+                            Never say goodbye till the end comes!
+                        </p>
+                    </div>
+                </div>
+                <div class="reply-btn">
+                    <a href="" class="btn-reply text-uppercase">reply</a>
+                </div>
+            </div>
+        </div>
+    }
+       
+</div>

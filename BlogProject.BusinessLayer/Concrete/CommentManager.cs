@@ -19,7 +19,8 @@ namespace BlogProject.BusinessLayer.Concrete
 			_commentDal = commentDal;
 		}
 
-		public void TDelete(int id)
+    
+        public void TDelete(int id)
 		{
 			_commentDal.Delete(id);
 		}
@@ -29,7 +30,12 @@ namespace BlogProject.BusinessLayer.Concrete
 			return _commentDal.GetAll();
 		}
 
-		public Comment TGetById(int id)
+        public List<Comment> TGetArticeleWithComment(int articleId)
+        {
+            return _commentDal.GetArticeleWithComment(articleId);
+        }
+
+        public Comment TGetById(int id)
 		{
 			return _commentDal.GetById(id);
 		}
