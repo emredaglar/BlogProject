@@ -67,31 +67,42 @@
                     <div class="navigation-area">
                         <div class="row">
                             <div class="col-lg-6 col-md-6 col-12 nav-left flex-row d-flex justify-content-start align-items-center">
-                                <div class="thumb">
-                                    <a href="#"><img class="img-fluid" src="/sensive-master/img/blog/prev.jpg" alt=""></a>
-                                </div>
-                                <div class="arrow">
-                                    <a href="#"><span class="lnr text-white lnr-arrow-left"></span></a>
-                                </div>
-                                <div class="detials">
-                                    <p>Prev Post</p>
-                                    <a href="#"><h4>A Discount Toner</h4></a>
-                                </div>
+                                @if (ViewBag.PrevArticle != null)
+                                {
+                                    <div class="thumb">
+                                        <a href="@Url.Action("Index", "ArticleDetail", new { id = ViewBag.PrevArticle.ArticleId })">
+                                            <img class="img-fluid" style="max-width: 60px; height: 60px;" src="@ViewBag.PrevArticle.CoverImageUrl" alt="">
+
+                                        </a>
+                                    </div>
+                                    <div class="detials">
+                                        <p>Prev Post</p>
+                                        <a href="@Url.Action("Index", "ArticleDetail", new { id = ViewBag.PrevArticle.ArticleId })">
+                                            <h4>@ViewBag.PrevArticle.Title</h4>
+                                        </a>
+                                    </div>
+                                }
                             </div>
                             <div class="col-lg-6 col-md-6 col-12 nav-right flex-row d-flex justify-content-end align-items-center">
-                                <div class="detials">
-                                    <p>Next Post</p>
-                                    <a href="#"><h4>Cartridge Is Better</h4></a>
-                                </div>
-                                <div class="arrow">
-                                    <a href="#"><span class="lnr text-white lnr-arrow-right"></span></a>
-                                </div>
-                                <div class="thumb">
-                                    <a href="#"><img class="img-fluid" src="/sensive-master/img/blog/next.jpg" alt=""></a>
-                                </div>
+                                @if (ViewBag.NextArticle != null)
+                                {
+                                    <div class="detials">
+                                        <p>Next Post</p>
+                                        <a href="@Url.Action("Index", "ArticleDetail", new { id = ViewBag.NextArticle.ArticleId })">
+                                            <h4>@ViewBag.NextArticle.Title</h4>
+                                        </a>
+                                    </div>
+                                    <div class="thumb">
+                                        <a href="@Url.Action("Index", "ArticleDetail", new { id = ViewBag.NextArticle.ArticleId })">
+                                            <img class="img-fluid" style="max-width: 60px; height: 60px;" src="@ViewBag.NextArticle.CoverImageUrl" alt="">
+
+                                        </a>
+                                    </div>
+                                }
                             </div>
                         </div>
                     </div>
+
                     @await Html.PartialAsync("~/Views/Comment/CommentList.cshtml", Model.Comments ?? new List<Comment>())
                     @await Html.PartialAsync("~/Views/Comment/AddComment.cshtml", new Comment { ArticleId = (int)ViewBag.ArticleId })
 
@@ -100,7 +111,8 @@
                 <!-- Start Blog Post Siddebar -->
                 <div class="col-lg-4 sidebar-widgets">
                     <div class="widget-wrap">
-                        @await Html.PartialAsync("~/Views/Newsletter/NewsletterSubscribe.cshtml", new Newsletter())
+                        @await Html.PartialAsync("~/Views/Newsletter/NewsletterSubscribe.cshtml", (object)ViewBag.Newsletter)
+                      
                         @await Component.InvokeAsync("_CategoryBlogsCP")
                         @await Component.InvokeAsync("_PopularBlogsCP")
                         @await Component.InvokeAsync("_TagCloudCP")
