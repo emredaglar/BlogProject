@@ -12,6 +12,7 @@ namespace BlogProject.EntityLayer.Concrete
         public string Name { get; set; }
         public string Surname { get; set; }
         public string ImageUrl { get; set; }
+        public string UserDescription { get; set; }
         public List<Article> Articles { get; set; }
         public List<Comment> Comments { get; set; }
     }

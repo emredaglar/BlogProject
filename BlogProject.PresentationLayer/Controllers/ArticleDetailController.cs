@@ -1,4 +1,5 @@
 ﻿using BlogProject.BusinessLayer.Abstract;
+using BlogProject.EntityLayer.Concrete;
 using Microsoft.AspNetCore.Mvc;
 
 namespace BlogProject.PresentationLayer.Controllers
@@ -12,8 +13,10 @@ namespace BlogProject.PresentationLayer.Controllers
             _articleService = articleService;
         }
 
-        public IActionResult Index(int id)
+        public  IActionResult Index(int id)
         {
+            var article = _articleService.TGetById(id);
+            ViewBag.ArticleId = article.ArticleId;
             var value = _articleService.TArticleDetailWithUserAndComment(id);
             return View(value);
         }

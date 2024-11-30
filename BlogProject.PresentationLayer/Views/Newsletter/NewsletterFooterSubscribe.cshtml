@@ -1,14 +1,17 @@
-﻿
+﻿@using BlogProject.EntityLayer.Concrete
+@model Newsletter
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.10/dist/sweetalert2.min.css">
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.10/dist/sweetalert2.min.js"></script>
+
 <div class="col-lg-4  col-md-6 col-sm-6">
     <div class="single-footer-widget">
         <h6>Abone Ol</h6>
         <p>Güncel İçeriklerden Haberdar Olabilirsin!</p>
         <div class="">
 
-            <form novalidate="true" asp-controller="Newsletter" method="post" asp-action="NewsletterFooterSubscribe" class="form-inline">
-
+            <form id="footerNewsletterForm" novalidate="true" asp-controller="Newsletter" method="post" asp-action="NewsletterFooterSubscribe" class="form-inline">
                 <div class="d-flex flex-row">
-
                     <input class="form-control" name="Email" placeholder="Email Adresiniz" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Email Adresiniz'"
                            required="" type="email">
                     <button type="submit" class="click-btn btn btn-default"><span class="lnr lnr-arrow-right"></span></button>
@@ -22,3 +25,45 @@
         </div>
     </div>
 </div>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    $(document).ready(function () {
+        // Formun submit işlemi
+        $("#footerNewsletterForm").submit(function (event) {
+            event.preventDefault();  // Formun normal submit olmasını engelliyoruz
+            var formData = $(this).serialize();  // Formdaki verileri alıyoruz
+
+            $.ajax({
+                url: '@Url.Action("NewsletterFooterSubscribe", "Newsletter")',
+                type: 'POST',
+                data: formData,
+                success: function (response) {
+                    if (response.success) {
+                        Swal.fire({
+                            icon: 'success',
+                            title: 'Başarıyla Abone Oldunuz!',
+                            text: 'Bültenimize başarılı bir şekilde abone oldunuz.',
+                            confirmButtonText: 'Tamam'
+                        });
+                    } else {
+                        Swal.fire({
+                            icon: 'error',
+                            title: 'Bir Hata Oluştu!',
+                            text: 'Abone olma işlemi sırasında bir hata oluştu.',
+                            confirmButtonText: 'Tamam'
+                        });
+                    }
+                },
+                error: function () {
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Bir Hata Oluştu!',
+                        text: 'İşlem sırasında bir hata oluştu.',
+                        confirmButtonText: 'Tamam'
+                    });
+                }
+            });
+        });
+    });
+</script>

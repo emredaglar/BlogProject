@@ -13,18 +13,22 @@ namespace BlogProject.DataAccessLayer.EntityFreamwork
 {
 	public class EfCommentDal : GenericRepository<Comment>, ICommentDal
 	{
-		public EfCommentDal(BlogContext context) : base(context)
+        private readonly BlogContext _context;
+        public EfCommentDal(BlogContext context) : base(context)
 		{
+            _context = context;
 		}
 
         public List<Comment> GetArticeleWithComment(int articleId)
         {
-            var context = new BlogContext();
-            var values = context.Comments
-                                 .Where(x => x.ArticleId == articleId)  // Belirtilen makale ID'sine ait yorumlar
-                                 .Include(x => x.Article)  // Yorumlar ile ilgili makale bilgilerini dahil et
-                                 .ToList();
+           
+            var values = _context.Comments
+                   .Where(x => x.ArticleId == articleId)
+                   .Include(x => x.Article)
+                   .Include(x => x.AppUser)
+                   .ToList();
             return values;
         }
+        
     }
 }

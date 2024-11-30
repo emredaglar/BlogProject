@@ -1,0 +1,14 @@
+﻿@using BlogProject.EntityLayer.Concrete
+@model Comment
+
+<div class="comment-form">
+    <h4>Leave a Reply</h4>
+    
+    <form method="post" action="/Comment/AddComment">
+        <input type="hidden" name="ArticleId" value="@ViewBag.ArticleId" />
+        <div class="form-group">
+            <textarea class="form-control mb-10" rows="5" name="Detail" placeholder="Mesajınızı yazın" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Mesajınızı yazın'" required=""></textarea>
+        </div>
+        <button type="submit" class="button submit_btn">Gönder</button>
+    </form>
+</div>

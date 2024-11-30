@@ -17,24 +17,35 @@ namespace BlogProject.PresentationLayer.Controllers
         {
             return PartialView();
         }
+
         [HttpPost]
         public IActionResult NewsletterSubscribe(Newsletter newsletter)
         {
-          
-            _newsletterService.TInsert(newsletter);
-            return RedirectToAction("Index","Default");
+            if (ModelState.IsValid)
+            {
+                _newsletterService.TInsert(newsletter);
+                // Başarılı abone olma işlemi sonrasında JSON döndür
+                return Json(new { success = true });
+            }
+            return Json(new { success = false });
         }
+
         [HttpGet]
         public PartialViewResult NewsletterFooterSubscribe()
         {
             return PartialView();
         }
+
         [HttpPost]
         public IActionResult NewsletterFooterSubscribe(Newsletter newsletter)
         {
-
-            _newsletterService.TInsert(newsletter);
-            return RedirectToAction("Index", "Default");
+            if (ModelState.IsValid)
+            {
+                _newsletterService.TInsert(newsletter);
+                // Başarılı abone olma işlemi sonrasında JSON döndür
+                return Json(new { success = true });
+            }
+            return Json(new { success = false });
         }
     }
 }
