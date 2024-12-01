@@ -34,4 +34,11 @@
     <ProjectReference Include="..\BlogProject.BusinessLayer\BlogProject.BusinessLayer.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Areas\WriterArea\Controllers\" />
+    <Folder Include="Areas\WriterArea\Data\" />
+    <Folder Include="Areas\WriterArea\Models\" />
+    <Folder Include="Areas\WriterArea\Views\Shared\" />
+  </ItemGroup>
+
 </Project>
