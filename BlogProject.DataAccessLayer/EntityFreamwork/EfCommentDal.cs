@@ -29,6 +29,12 @@ namespace BlogProject.DataAccessLayer.EntityFreamwork
                    .ToList();
             return values;
         }
-        
+
+        public List<Comment> GetCommentsByAppUserId(int id)
+        {
+            var context = new BlogContext();
+            var values = context.Comments.Where(x => x.AppUserId == id).Include(x => x.Article).ToList();
+            return values;
+        }
     }
 }

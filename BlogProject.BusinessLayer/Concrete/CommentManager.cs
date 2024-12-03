@@ -40,7 +40,12 @@ namespace BlogProject.BusinessLayer.Concrete
 			return _commentDal.GetById(id);
 		}
 
-		public void TInsert(Comment entity)
+        public List<Comment> TGetCommentsByAppUserId(int id)
+        {
+			return _commentDal.GetCommentsByAppUserId(id);
+        }
+
+        public void TInsert(Comment entity)
 		{
 			_commentDal.Insert(entity);
 		}

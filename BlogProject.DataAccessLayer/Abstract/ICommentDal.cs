@@ -11,5 +11,6 @@ namespace BlogProject.DataAccessLayer.Abstract
     public interface ICommentDal:IGenericDal<Comment>
     {
         List<Comment> GetArticeleWithComment(int articleId);
+        public List<Comment> GetCommentsByAppUserId(int id);
     }
 }
