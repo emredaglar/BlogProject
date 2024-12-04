@@ -19,7 +19,11 @@ namespace BlogProject.BusinessLayer.Concrete
 			_commentDal = commentDal;
 		}
 
-    
+		public Comment TGetCommentById(int commentId, int userId)
+		{
+			return _commentDal.GetCommentById(commentId, userId);
+		}
+
         public void TDelete(int id)
 		{
 			_commentDal.Delete(id);

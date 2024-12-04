@@ -11,6 +11,7 @@ namespace BlogProject.BusinessLayer.Abstract
 	{
         public List<Comment> TGetArticeleWithComment(int articleId);
         public List<Comment> TGetCommentsByAppUserId(int id);
+        public Comment TGetCommentById(int commentId, int userId);
 
     }
 }

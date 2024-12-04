@@ -12,5 +12,6 @@ namespace BlogProject.DataAccessLayer.Abstract
     {
         List<Comment> GetArticeleWithComment(int articleId);
         public List<Comment> GetCommentsByAppUserId(int id);
+        public Comment GetCommentById(int commentId, int userId);
     }
 }
