@@ -1,0 +1,129 @@
+﻿@using BlogProject.EntityLayer.Concrete
+
+
+@model List<Article>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_WriterLayout.cshtml";
+}
+<br />
+<div class="col-md-12">
+    <div class="white_shd full margin_bottom_30">
+        <div class="full graph_head d-flex align-items-center justify-content-between">
+            <div class="heading1 margin_0">
+                <h2>Blog Yazılarım</h2>
+            </div>
+           
+        </div>
+
+        <div class="full progress_bar_inner">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="msg_list_main">
+                        <ul class="msg_list">
+                            @foreach (var item in Model)
+                            {
+                                <li>
+                                    <!-- Sol kısım: Başlık, açıklama ve tarih -->
+                                    <div class="left_section">
+                                        <span class="name_user">@item.Title - @item.category.CategoryName</span>
+                                        <span class="msg_user">@item.Description</span>
+                                        <span class="time_ago">@item.CreatedDate.ToString("dd-MMM")</span>
+                                    </div>
+
+                                    <!-- Sağ kısım: Butonlar -->
+                                    <div class="button_section">
+                                        <a href="/Writer/Write/DetailArticle/@item.ArticleId" class="btn cur-p btn-outline-primary btn-sm">Görüntüle</a>
+                                        <a href="/Writer/Write/EditArticle/@item.ArticleId" class="btn cur-p btn-outline-success btn-sm">Güncelle</a>
+                                        <a href="/Writer/Write/DeleteArticle/@item.ArticleId" class="btn cur-p btn-outline-danger btn-sm">Sil</a>
+                                    </div>
+                                </li>
+                            }
+                            <br />
+                        </ul>
+                        <br />
+                        <br />
+                        <br />
+                        <a href="/Writer/Write/CreateArticle/" class="btn cur-p btn-success custom-button" style="margin-right:30px;">Yeni Yazı Ekle</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    .msg_list li {
+        display: flex;
+        justify-content: space-between;
+        padding: 10px;
+        border-bottom: 1px solid #ddd;
+    }
+
+        .msg_list li .left_section {
+            display: flex;
+            flex-direction: column;
+            flex-grow: 3;
+        }
+
+        .msg_list li .name_user {
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .msg_list li .msg_user {
+            color: #555;
+            font-size: 14px;
+            margin-bottom: 5px;
+        }
+
+        .msg_list li .time_ago {
+            font-size: 12px;
+            color: #888;
+        }
+
+    .button_section {
+        display: flex;
+        gap: 10px; /* Butonlar arasındaki boşluk */
+        align-items: center;
+    }
+
+    .btn {
+        padding: 8px 16px;
+        font-size: 14px;
+        border-radius: 5px;
+        font-weight: bold;
+        transition: background-color 0.3s, color 0.3s;
+    }
+
+    .btn-outline-primary:hover {
+        background-color: #007bff;
+        color: #fff;
+    }
+
+    .btn-outline-success:hover {
+        background-color: #28a745;
+        color: #fff;
+    }
+
+    .btn-outline-danger:hover {
+        background-color: #dc3545;
+        color: #fff;
+    }
+
+    .graph_head {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 10px;
+    }
+
+    .custom-button {
+        padding: 8px 15px;
+        font-size: 12px;
+        border-radius: 8px;
+        font-weight: bold;
+        margin-top: 2px; 
+
+    }
+</style>

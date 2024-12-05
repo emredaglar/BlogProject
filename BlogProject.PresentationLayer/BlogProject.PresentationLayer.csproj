@@ -32,6 +32,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\BlogProject.BusinessLayer\BlogProject.BusinessLayer.csproj" />
+    <ProjectReference Include="..\BlogProject.EntityLayer\BlogProject.EntityLayer.csproj" />
   </ItemGroup>
 
   <ItemGroup>

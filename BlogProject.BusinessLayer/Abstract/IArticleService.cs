@@ -7,8 +7,8 @@ using System.Threading.Tasks;
 
 namespace BlogProject.BusinessLayer.Abstract
 {
-	public interface IArticleService : IGenericService<Article>
-	{
+    public interface IArticleService : IGenericService<Article>
+    {
         List<Article> TArticleListWithCategory();
         List<Article> TArticleListWithCategoryAndAppUser();
         public Article TGetLastArticle();
@@ -16,5 +16,7 @@ namespace BlogProject.BusinessLayer.Abstract
         List<Article> TSliderBlogsAndCategory();
         List<Article> TPopularBlogs();
         Article TArticleDetailWithUserAndComment(int id);
+        List<Article> TGetArticlesByAppUserId(int id);
+        public Article TGetArticlesWithCategory(int id);
     }
 }

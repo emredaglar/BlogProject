@@ -49,6 +49,20 @@ namespace BlogProject.DataAccessLayer.EntityFreamwork
             return values;
         }
 
+        public List<Article> GetArticlesByAppUserId(int id)
+        {
+            var context = new BlogContext();
+            var values = context.Articles.Where(x => x.AppUserId == id).Include(x => x.category).ToList();
+            return values;
+        }
+
+        public Article GetArticlesWithCategory(int id)
+        {
+            var context = new BlogContext();
+            var value=context.Articles.Where(x=>x.ArticleId==id).Include(x => x.category).FirstOrDefault();
+            return value;
+        }
+
         public Article GetLastArticle()
         {
             var context = new BlogContext();

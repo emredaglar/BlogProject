@@ -79,5 +79,15 @@ namespace BlogProject.BusinessLayer.Concrete
         {
             return _articleDal.ArticleDetailWithUserAndComment(id);
         }
+
+        public List<Article> TGetArticlesByAppUserId(int id)
+        {
+            return _articleDal.GetArticlesByAppUserId(id);
+        }
+
+        public Article TGetArticlesWithCategory(int id)
+        {
+            return _articleDal.GetArticlesWithCategory(id);
+        }
     }
 }
