@@ -15,7 +15,7 @@ namespace BlogProject.PresentationLayer.ViewComponents
         public IViewComponentResult Invoke()
         {
             int page = 1;
-            int pageSize = 2; // Sayfa başına gösterilecek makale sayısı
+            int pageSize = 4; // Sayfa başına gösterilecek makale sayısı
 
             // URL'deki 'page' parametresini al
             if (HttpContext.Request.Query.TryGetValue("page", out var pageValue))

@@ -22,9 +22,9 @@
                         @item.Title
                     </h3>
                 </a>
-                <p class="tag-list-inline">Tag: <a href="#">travel</a>, <a href="#">life style</a>, <a href="#">technology</a>, <a href="#">fashion</a></p>
-                <p>@item.Description</p>
-                <a class="button" href="/ArticleDetail/Index/@item.ArticleId">Read More <i class="ti-arrow-right"></i></a>
+                <p class="tag-list-inline">Tag: <a href="#">Seyehat</a>, <a href="#">Kamp</a>, <a href="#">Teknoloji</a>, <a href="#">Doğa</a></p>
+                <p>@item.Description.Substring(0, 100)...</p>
+                <a class="button" href="/ArticleDetail/Index/@item.ArticleId">Devamını Oku <i class="ti-arrow-right"></i></a>
             </div>
         </div>
     }
@@ -59,3 +59,11 @@
         </ul>
     </nav>
 </div>
+<style>
+    .single-recent-blog-post .thumb img {
+        width: 730px !important;
+        height: 400px !important;
+        object-fit: cover; /* Görselin boyuta sığmasını sağlar */
+    }
+</style>
+

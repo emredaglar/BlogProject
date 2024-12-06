@@ -14,11 +14,11 @@
         <div class="container">
             <div class="hero-banner hero-banner--sm">
                 <div class="hero-banner__content">
-                    <h1>Blog details</h1>
+                    <h1>Blog Detayı</h1>
                     <nav aria-label="breadcrumb" class="banner-breadcrumb">
                         <ol class="breadcrumb">
-                            <li class="breadcrumb-item"><a href="#">Home</a></li>
-                            <li class="breadcrumb-item active" aria-current="page">Blog Details</li>
+                            <li class="breadcrumb-item"><a href="#">Anasayfa</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">Blog Detayı</li>
                         </ol>
                     </nav>
                 </div>
@@ -36,8 +36,8 @@
                         <a href="#"><h4>@Model.Title</h4></a>
                         <div class="user_details">
                             <div class="float-left">
-                                <a href="#">Lifestyle</a>
-                                <a href="#">Gadget</a>
+                                <a href="#">Doğa</a>
+                                <a href="#">Teknoloji</a>
                             </div>
                             <div class="float-right mt-sm-0 mt-3">
                                 <div class="media">
@@ -53,7 +53,7 @@
                         </div>
                         <p>@Model.Description</p>
                         <div class="news_d_footer flex-column flex-sm-row">
-                            <a href="#"><span class="align-middle mr-2"><i class="ti-heart"></i></span>Lily and 4 people like this</a>
+                            <a href="#"><span class="align-middle mr-2"><i class="ti-heart"></i></span>35 Beğeni</a>
                             <a class="justify-content-sm-center ml-sm-auto mt-sm-0 mt-2" href="#"><span class="align-middle mr-2"><i class="ti-themify-favicon"></i></span>@Model.Comments.Count Yorum</a>
                             <div class="news_socail ml-sm-auto mt-sm-0 mt-2">
                                 <a href="#"><i class="fab fa-facebook-f"></i></a>
@@ -76,7 +76,7 @@
                                         </a>
                                     </div>
                                     <div class="detials">
-                                        <p>Prev Post</p>
+                                        <p>Önceki Yazı</p>
                                         <a href="@Url.Action("Index", "ArticleDetail", new { id = ViewBag.PrevArticle.ArticleId })">
                                             <h4>@ViewBag.PrevArticle.Title</h4>
                                         </a>
@@ -87,7 +87,7 @@
                                 @if (ViewBag.NextArticle != null)
                                 {
                                     <div class="detials">
-                                        <p>Next Post</p>
+                                        <p>Sonraki Yazı</p>
                                         <a href="@Url.Action("Index", "ArticleDetail", new { id = ViewBag.NextArticle.ArticleId })">
                                             <h4>@ViewBag.NextArticle.Title</h4>
                                         </a>
